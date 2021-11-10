@@ -1,0 +1,14 @@
+#CanvasDiv {
+    border-style: solid;
+    border-color: black;
+}
+
+#DiskCanvas{
+    height: 1000px;
+    width: 1000px;
+}
+
+.RectangleArea{
+    height: 1000px;
+    width: 1000px;
+}
