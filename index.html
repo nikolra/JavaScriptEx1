@@ -3,24 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>java_script_ex_1</title>
+    <link rel="stylesheet" href="/CSS/index.css">
 </head>
 <body>
-    <canvas id= "myCanvas"> </canvas>
-    <script type="text/javascript" src="/JavaScript/Disk.js"></script>
-    <div id = "buttons">
-        <span id = "StartSpan" class="ButtonSpan">
-            <button id = "StartButton" class = "Button">Start!</button>
+    <div id="CanvasDiv" class="RectangleArea">
+        <canvas id="DiskCanvas" class="RectangleArea"> </canvas>
+        <script type="text/javascript" src="/JavaScript/Disk.js"></script>
+        <script type="text/javascript" src="/JavaScript/Disks.js"></script>
+        <script type="text/javascript" src="/JavaScript/ButtonsClick.js"></script>
+    </div>
+    <div id="UserControllers">
+        <div id="buttons">
+        <span id="StartSpan" class="ButtonSpan">
+            <button id="StartButton" class="Button">Start!</button>
         </span>
-        <span id = "PauseSpan" class="ButtonSpan">
-            <button id = "PauseButton" class = "Button">Pause</button>
+        <span id="PauseSpan" class="ButtonSpan">
+            <button id="PauseButton" class="Button">Pause</button>
         </span>
-        <span id = "ResetSpan" class="ButtonSpan">
-            <button id = "ResetButton" class = "Button">Reset</button>
+        <span id="ResetSpan" class="ButtonSpan">
+            <button id="ResetButton" class="Button">Reset</button>
         </span>
+        </div>
         <div>
-            <span id = "TimeSpan">
-                Insert time limit:
-                <input type = "text" id = "TimeInput"></input>
+            <span id="TimeSpan">
+                <label for="TimeInput">Insert time limit:</label>
+                <input type="text" id="TimeInput"/>
             </span>
         </div>
     </div>
