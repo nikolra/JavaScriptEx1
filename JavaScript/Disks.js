@@ -21,6 +21,7 @@ function coalitionBetweenDisks() {
                 if (distance - innerDisk.radius - disk.radius < 1) { //tow disks collide
                     setTimeout(() => {// removes flash on the screen when a disk is removed
                         //TODO: decide which disk to remove
+                        //TODO: add reaction of the remaining disk
                         disks.splice(index, 1)// removes a single disk at index in the array
                     })
                 }

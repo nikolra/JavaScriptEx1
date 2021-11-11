@@ -1,20 +1,3 @@
-const startButton = document.getElementById("StartButton");
-
-const velocity = {
-    x: 1,
-    y: 1
-}
-
-
-const velocity2 = {
-    x: -1,
-    y: -1
-}
-const topDisk = new Disk(50, 10, 10, 'pink', velocity)
-const buttonDisk = new Disk(50, canvas.height -10, 10, 'blue', velocity2)
-const rightDisk = new Disk(canvas.width - 10, 50, 10, 'black', velocity2)
-const leftDisk = new Disk(10, 100, 10, 'purple', velocity2)
-
 //const canvas = document.getElementById("DiskCanvas");
 //const context = canvas.getContext("2d");
 
@@ -53,16 +36,17 @@ function drawInitialDisksLocation() {
     })
 }
 
-function startClicked () {
+function startClicked() {
     animate()
 }
 
+function PauseClicked() {
+    console.log("Pause event")
+    cancelAnimationFrame(animate)
+}
 
 drawInitialDisksLocation()
-//startClicked()
 
-this.el = {
-    startButton:root.querySelector("StartButton"),
-    pauseButton:root.querySelector("PauseButton"),
-    resetButton:root.querySelector("ResetButton")
-};
+window.addEventListener('keydown', PauseClicked)
+//TODO: delete before submitting
+//startClicked()
