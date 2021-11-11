@@ -1,6 +1,4 @@
 
-//need to create the 4 disks
-
 function animate() {
     if(isAnimating) {
         requestAnimationFrame(animate)
@@ -42,5 +40,5 @@ function coalitionWithWall() {
     })
 }
 
-window.addEventListener('click', animate)//happens every time we click on the mouse
+//window.addEventListener('click', animate)//happens every time we click on the mouse
 //TODO: delete before submitting
