@@ -37,7 +37,8 @@ function drawInitialDisksLocation() {
 }
 
 function startClicked() {
-    animate()
+    requestAnimationFrame(animate) //similar to setInterval. call as soon as it can
+    //animate()
 }
 
 function PauseClicked() {
