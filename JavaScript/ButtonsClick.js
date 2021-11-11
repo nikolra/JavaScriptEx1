@@ -36,9 +36,17 @@ function drawInitialDisksLocation() {
     })
 }
 
-function startClicked () {
+function startClicked() {
     animate()
 }
 
+function PauseClicked() {
+    console.log("Pause event")
+    cancelAnimationFrame(animate)
+}
+
 drawInitialDisksLocation()
+
+window.addEventListener('keydown', PauseClicked)
+//TODO: delete before submitting
 //startClicked()
