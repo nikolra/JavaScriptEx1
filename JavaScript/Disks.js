@@ -1,6 +1,4 @@
 
-//need to create the 4 disks
-
 function animate() {
     requestAnimationFrame(this.animate) //similar to setInterval. call as soon as it can
     context.clearRect(0, 0, canvas.width, canvas.height) // clears the previous screen. only the last drawn disk is shown
@@ -39,5 +37,5 @@ function coalitionWithWall() {
     })
 }
 
-window.addEventListener('click', animate)//happens every time we click on the mouse
+//window.addEventListener('click', animate)//happens every time we click on the mouse
 //TODO: delete before submitting
