@@ -1,5 +1,5 @@
-//const canvas = document.getElementById("DiskCanvas");
-//const context = canvas.getContext("2d");
+
+let isAnimating = true
 
 const radius = 10
 const smallInt = 0.001
@@ -37,14 +37,13 @@ function drawInitialDisksLocation() {
 }
 
 function startClicked() {
-    requestAnimationFrame(animate) //similar to setInterval. call as soon as it can
-    //animate()
+    isAnimating = true
+    animate()
 }
 
 function PauseClicked() {
-
-    //console.log("Pause event")
-    cancelAnimationFrame(animate)
+    console.log("Pause event")
+    isAnimating = false
 }
 
 drawInitialDisksLocation()

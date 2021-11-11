@@ -39,6 +39,3 @@ function coalitionWithWall() {
             disk.velocity.x =  -disk.velocity.x
     })
 }
-
-//window.addEventListener('click', animate)//happens every time we click on the mouse
-//TODO: delete before submitting
