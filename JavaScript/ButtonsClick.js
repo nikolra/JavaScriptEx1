@@ -1,7 +1,4 @@
-//const canvas = document.getElementById("DiskCanvas");
-//const context = canvas.getContext("2d");
-
-
+const startButton = document.getElementById("StartButton");
 
 const velocity = {
     x: 1,
@@ -39,5 +36,12 @@ function startClicked () {
     animate()
 }
 
+
 drawInitialDisksLocation()
 //startClicked()
+
+this.el = {
+    startButton:root.querySelector("StartButton"),
+    pauseButton:root.querySelector("PauseButton"),
+    resetButton:root.querySelector("ResetButton")
+};
