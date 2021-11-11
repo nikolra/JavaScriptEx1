@@ -12,3 +12,11 @@
     height: 1000px;
     width: 1000px;
 }
+
+.timer {
+    font-family: sans-serif;
+    display: inline-block;
+    padding: 24px 32px;
+    border-radius: 30px;
+    background: white;
+}

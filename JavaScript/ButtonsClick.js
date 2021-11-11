@@ -37,17 +37,16 @@ function drawInitialDisksLocation() {
 }
 
 function startClicked() {
-    isAnimating = true
-    animate()
+    setTimer();
+    isAnimating = true;
+    animate();
 }
 
 function PauseClicked() {
-    console.log("Pause event")
-    isAnimating = false
+    console.log("Pause event");
+    isAnimating = false;
 }
 
 drawInitialDisksLocation()
 
-window.addEventListener('keydown', PauseClicked)
-//TODO: delete before submitting
-//startClicked()
+
