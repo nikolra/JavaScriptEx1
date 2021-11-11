@@ -42,7 +42,8 @@ function startClicked() {
 }
 
 function PauseClicked() {
-    console.log("Pause event")
+
+    //console.log("Pause event")
     cancelAnimationFrame(animate)
 }
 

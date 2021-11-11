@@ -2,13 +2,17 @@
 //need to create the 4 disks
 
 function animate() {
-    context.clearRect(0, 0, canvas.width, canvas.height) // clears the previous screen. only the last drawn disk is shown
-    disks.forEach( (disk) => {
-        disk.draw()
-        disk.update()
-    })
-    coalitionBetweenDisks()
-    coalitionWithWall()
+    if(isAnimating) {
+        requestAnimationFrame(animate)
+        context.clearRect(0, 0, canvas.width, canvas.height) // clears the previous screen. only the last drawn disk is shown
+        disks.forEach((disk) => {
+            disk.draw()
+            disk.update()
+        })
+        coalitionBetweenDisks()
+        coalitionWithWall()
+    }
+    else cancelAnimationFrame(animate)
 }
 
 function coalitionBetweenDisks() {
@@ -38,5 +42,5 @@ function coalitionWithWall() {
     })
 }
 
-window.addEventListener('click', startClicked)//happens every time we click on the mouse
+window.addEventListener('click', animate)//happens every time we click on the mouse
 //TODO: delete before submitting
