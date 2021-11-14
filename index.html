@@ -8,20 +8,15 @@
 <body>
     <div id="CanvasDiv" class="RectangleArea">
         <canvas id="DiskCanvas" class="RectangleArea"> </canvas>
-        <script type="text/javascript" src="/JavaScript/Disk.js"></script>
-        <script type="text/javascript" src="/JavaScript/Disks.js"></script>
-        <script type="text/javascript" src="/JavaScript/ButtonsClick.js"></script>
-        <script type="text/javascript" src="/JavaScript/tempfile.js"></script>
-        <script type="text/javascript" src="/JavaScript/Timer.js"></script>
     </div>
-    <p class="timer" id="countDown"></p>
+    <p id="CurrentTime"></p>
     <div id="UserControllers">
         <div id="Buttons">
         <span id="StartSpan" class="ButtonSpan">
-            <button id="StartButton" class="Button" onclick="startClicked()">Start!</button>
+            <button id="StartButton" class="Button">Start!</button>
         </span>
         <span id="PauseSpan" class="ButtonSpan">
-            <button id="PauseButton" class="Button" onclick="PauseClicked()">Pause</button>
+            <button id="PauseButton" class="Button">Pause</button>
         </span>
         <span id="ResetSpan" class="ButtonSpan">
             <button id="ResetButton" class="Button">Reset</button>
@@ -34,5 +29,10 @@
             </span>
         </div>
     </div>
+    <script type="text/javascript" src="/JavaScript/Disk.js"></script>
+    <script type="text/javascript" src="/JavaScript/Disks.js"></script>
+    <script type="text/javascript" src="/JavaScript/ButtonsClick.js"></script>
+    <script type="text/javascript" src="/JavaScript/tempfile.js"></script>
+    <script type="text/javascript" src="/JavaScript/timer.js"></script>
 </body>
 </html>

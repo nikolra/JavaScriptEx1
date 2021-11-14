@@ -1,6 +1,5 @@
 
 let isAnimating = true
-
 const radius = 10
 const smallInt = 0.001
 const initialVelocity = {x:1, y:1}
@@ -36,17 +35,6 @@ function drawInitialDisksLocation() {
     })
 }
 
-function startClicked() {
-    setTimer();
-    isAnimating = true;
-    animate();
-}
-
-function PauseClicked() {
-    console.log("Pause event");
-    isAnimating = false;
-}
 
 drawInitialDisksLocation()
-
 
