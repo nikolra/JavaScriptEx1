@@ -4,8 +4,8 @@ function animate() {
     if(isAnimating) {
         if(disks.length === 1) {
             isAnimating = false
-            curr_time_disply.innerHTML = 'Game ended'
             let time_left = counter ;
+            curr_time_disply.innerHTML = 'GAME OVER' + ', Time left to run the game :' + time_left + 'seconds' ;
             counter = 0
             showSumMsg(time_left);
         }
@@ -23,12 +23,6 @@ function animate() {
         cancelAnimationFrame(animate)
         isAnimating = false
     }
-}
-
-function showSumMsg(time_left)
-{
-    window.addEventListener("message",(event)=>'the time has left to the end of the game is',time_left)
-    console.log('summery' ,time_left)
 }
 
 function coalitionBetweenDisks() {
