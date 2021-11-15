@@ -58,7 +58,6 @@ function timer_tick()
 window.addEventListener('beforeunload',ev => {
     if(isAnimating === true)
     {
-        ev.returnValue = 'Are you sure you want to leave?' ;
-        return ev.returnValue ;
+        return ev.returnValue = 'Are you sure you want to leave?' ;
     }
 });
