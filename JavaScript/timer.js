@@ -28,7 +28,7 @@ function startClicked() {
     if( !timer_id)
     {
         counter = document.getElementById('TimeInput').value ;
-        timer_id = window.setInterval(timer_tick,100);
+        timer_id = window.setInterval(timer_tick,1000);
     }
     enabled = true ;
     isAnimating = true;

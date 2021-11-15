@@ -5,29 +5,30 @@
     <title>java_script_ex_1</title>
     <link rel="stylesheet" href="/CSS/index.css">
 </head>
-<body>
+<body id="main">
     <div id="CanvasDiv" class="RectangleArea">
         <canvas id="DiskCanvas" class="RectangleArea"> </canvas>
     </div>
-    <p id="CurrentTime"></p>
-    <div id="UserControllers">
-        <div id="Buttons">
-        <span id="StartSpan" class="ButtonSpan">
-            <button id="StartButton" class="Button">Start!</button>
-        </span>
-        <span id="PauseSpan" class="ButtonSpan">
-            <button id="PauseButton" class="Button">Pause</button>
-        </span>
-        <span id="ResetSpan" class="ButtonSpan">
-            <button id="ResetButton" class="Button">Reset</button>
-        </span>
-        </div>
-        <div>
+    <p id="CurrentTime">Not Started..</p>
+    <div class="TimeInputDiv">
             <span id="TimeSpan">
                 <label for="TimeInput">Insert time limit in seconds:</label>
                 <input type="text" id="TimeInput" value="60"/>
             </span>
+    </div>
+    <div class="UserControllers">
+        <div id="Buttons">
+        <span id="StartSpan" class="ButtonSpan">
+            <button id="StartButton" class="Button" role="button">Start!</button>
+        </span>
+        <span id="PauseSpan" class="ButtonSpan">
+            <button id="PauseButton" class="Button" role="button">Pause</button>
+        </span>
+        <span id="ResetSpan" class="ButtonSpan">
+            <button id="ResetButton" class="Button" role="button">Reset</button>
+        </span>
         </div>
+
     </div>
     <script type="text/javascript" src="/JavaScript/Disk.js"></script>
     <script type="text/javascript" src="/JavaScript/Disks.js"></script>

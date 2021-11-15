@@ -5,7 +5,7 @@ const smallInt = 0.001
 const initialVelocity = {x:1, y:1}
 const topDisk = new Disk(50, radius, radius, 'pink', initialVelocity)
 const buttonDisk = new Disk(50, canvas.height -radius, 10, 'blue', initialVelocity)
-const rightDisk = new Disk(canvas.width - radius, 50, 10, 'black', initialVelocity)
+const rightDisk = new Disk(canvas.width - radius, 50, 10, 'green', initialVelocity)
 const leftDisk = new Disk(radius, 100, 10, 'purple', initialVelocity)
 const disks = [buttonDisk, topDisk, rightDisk, leftDisk]
 

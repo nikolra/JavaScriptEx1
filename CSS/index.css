@@ -1,6 +1,22 @@
+button, div ,input
+{
+    margin-top: 1rem;
+}
+
+#main
+{
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
 #CanvasDiv {
     border-style: solid;
     border-color: black;
+}
+.body{
+    -webkit-text-size-adjust: 100%;
 }
 
 #DiskCanvas{
@@ -13,10 +29,77 @@
     width: 1000px;
 }
 
+.inputs {
+    margin-top: 30px;
+}
+input {
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family:"Copperplate Gothic Light";
+
+}
+
+input {
+    background: #ecf0f3;
+    padding: 10px;
+    padding-left: 20px;
+    height: 50px;
+    font-size: 14px;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+}
+
 .timer {
     font-family: sans-serif;
     display: inline-block;
     padding: 24px 32px;
     border-radius: 30px;
     background: white;
+}
+
+.Button {
+    background-color: #fbeee0;
+    border: 2px solid #CBCED1FF;
+    border-radius: 30px;
+    font-family:"Copperplate Gothic Light";
+    box-shadow: #CBCED1FF 4px 4px 0 0;
+    color: #422800;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0 18px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-right: 5px;
+}
+#CurrentTime{
+    font-family:"Copperplate Gothic Light";
+}
+.Button:hover {
+    background-color: #fff;
+}
+
+.Button:active {
+    box-shadow: #422800 2px 2px 0 0;
+    transform: translate(2px, 2px);
+}
+
+
+.TimeInputDiv{
+    font-family:"Copperplate Gothic Light";
+    margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+    .Button {
+        min-width: 120px;
+        padding: 0 25px;
+    }
 }
