@@ -7,7 +7,7 @@ pause_btn.addEventListener("click",PauseClicked)
 const restart_btn = document.querySelector("#ResetButton")
 restart_btn.addEventListener("click",restartClicked)
 
-let curr_time_disply = document.querySelector("#CurrentTime");
+let curr_time_display = document.querySelector("#CurrentTime");
 
 let timer_id = null ;
 let enabled = true ;
@@ -17,12 +17,11 @@ function restartClicked(){
     console.log("restart event");
     counter = 0;
     timer_id = null ;
-    curr_time_disply.innerHTML = "Not initialize";
+    curr_time_display.innerHTML = "Not initialize";
     isAnimating = false;
     context.clearRect(0, 0, canvas.width, canvas.height)
     drawInitialDisksLocation()
 }
-
 
 function startClicked() {
     console.log("Start event");
@@ -44,10 +43,14 @@ function PauseClicked() {
     console.log("Pause event");
     isAnimating = false;
     enabled = false ;
+    context.clearRect(0, 0, canvas.width, canvas.height) // clears the previous screen. only the last drawn disk is shown
+    disks.forEach((disk) => {
+        disk.draw()
+        disk.update()
+    })
 }
 
-function timer_tick()
-{
+function timer_tick() {
     if(!enabled) return;
     if(counter === 0)
     {
@@ -56,7 +59,7 @@ function timer_tick()
     else {
         counter--;
         console.log(counter);
-        curr_time_disply.innerHTML = counter;
+        curr_time_display.innerHTML = counter;
     }
 }
 window.addEventListener('beforeunload',ev => {

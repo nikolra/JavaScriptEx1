@@ -5,7 +5,7 @@ function animate() {
         if(disks.length === 1) {
             isAnimating = false
             let time_left = counter ;
-            curr_time_disply.innerHTML = 'GAME OVER' + ', Time left to run the game :' + time_left + 'seconds' ;
+            curr_time_display.innerHTML = 'GAME OVER' + ', Time left to run the game :' + time_left + 'seconds' ;
             counter = 0
             showSumMsg(time_left);
         }
@@ -25,7 +25,7 @@ function animate() {
     }
 
     if(disks.length === 1) {
-        curr_time_disply.innerHTML = 'Game ended'
+        curr_time_display.innerHTML = 'Game ended'
         let time_left = counter ;
         counter = 0
         showSumMsg(time_left);
