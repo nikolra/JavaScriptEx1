@@ -1,6 +1,9 @@
 
 function animate() {
+
     if(isAnimating) {
+        if(disks.length === 1)
+            isAnimating = false
         requestAnimationFrame(animate)
         context.clearRect(0, 0, canvas.width, canvas.height) // clears the previous screen. only the last drawn disk is shown
         disks.forEach((disk) => {
@@ -9,8 +12,13 @@ function animate() {
         })
         coalitionBetweenDisks()
         coalitionWithWall()
+
     }
-    else cancelAnimationFrame(animate)
+    else{
+        cancelAnimationFrame(animate)
+        isAnimating = false
+    }
+
 }
 
 function coalitionBetweenDisks() {
@@ -20,17 +28,22 @@ function coalitionBetweenDisks() {
             const distance = Math.hypot(innerDisk.x - disk.x, innerDisk.y - disk.y)
             if (disk !== innerDisk) {
                 if (distance - innerDisk.radius - disk.radius < 1) { //two disks collide
-                    //setTimeout(() => {// removes flash on the screen when a disk is removed
-                        //TODO: add reaction of the remaining disk
-                        //TODO: update the if statement
-                    if(disk.velocity > innerDisk.velocity)
+                    //TODO: add reaction of the remaining disk
+                    if (calcAverage(disk.velocity.x, disk.velocity.y) > calcAverage(innerDisk.velocity.x, innerDisk.velocity.y)){
                         disks.splice(index, 1)// removes a single disk at index in the array
+                        innerDisk.velocity.x = 0 - innerDisk.velocity.x
+                        innerDisk.velocity.y = 0 - innerDisk.velocity.y
+                    }
                     else disks.splice(innerIndex, 1)
-                    //})
                 }
             }
         })
     })
+
+}
+
+function calcAverage(x, y) {
+    return(x + y) / 2
 }
 
 function coalitionWithWall() {
