@@ -31,8 +31,7 @@ function coalitionBetweenDisks() {
             const distance = Math.hypot(innerDisk.x - disk.x, innerDisk.y - disk.y)
             if (disk !== innerDisk) {
                 if (distance - innerDisk.radius - disk.radius < 1) { //two disks collide
-                    //TODO: update the if statement
-                    if (calcAverage(disk.velocity.x, disk.velocity.y) > calcAverage(innerDisk.velocity.x, innerDisk.velocity.y)){
+                    if (absolute(disk.velocity.x - disk.velocity.y) > absolute(innerDisk.velocity.x - innerDisk.velocity.y)) {
                         disks.splice(index, 1)// removes a single disk at index in the array
                         innerDisk.velocity.x = 0 - innerDisk.velocity.x
                         innerDisk.velocity.y = 0 - innerDisk.velocity.y
@@ -45,10 +44,9 @@ function coalitionBetweenDisks() {
 
 }
 
-function calcAverage(x, y) {
-    return(x + y) / 2
+function absolute(x) {
+    return x < 0 ? -x : x
 }
-
 function coalitionWithWall() {
     disks.forEach( (disk) => {
         if(disk.y <= radius || disk.y >= canvas.height - radius)
