@@ -4,10 +4,6 @@ function animate() {
     if(isAnimating) {
         if(disks.length === 1) {
             isAnimating = false
-            let time_left = counter ;
-            curr_time_disply.innerHTML = 'GAME OVER' + ', Time left to run the game :' + time_left + 'seconds' ;
-            counter = 0
-            showSumMsg(time_left);
         }
         requestAnimationFrame(animate)
         context.clearRect(0, 0, canvas.width, canvas.height) // clears the previous screen. only the last drawn disk is shown
@@ -17,6 +13,11 @@ function animate() {
         })
         coalitionBetweenDisks()
         coalitionWithWall()
+        if(disks.length === 1) {
+            curr_time_disply.innerHTML = 'Game ended'
+            let time_left = counter ;
+            counter = 0
+        }
 
     }
     else{
@@ -24,12 +25,7 @@ function animate() {
         isAnimating = false
     }
 
-    if(disks.length === 1) {
-        curr_time_disply.innerHTML = 'Game ended'
-        let time_left = counter ;
-        counter = 0
-        showSumMsg(time_left);
-    }
+
 
 }
 
