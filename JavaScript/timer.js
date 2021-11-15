@@ -55,6 +55,7 @@ function timer_tick() {
     if(counter === 0)
     {
         PauseClicked();
+        curr_time_disply.innerHTML = 'Sorry, time is up!'
     }
     else {
         counter--;
