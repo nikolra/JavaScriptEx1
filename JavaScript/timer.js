@@ -55,3 +55,10 @@ function timer_tick()
         curr_time_disply.innerHTML = counter;
     }
 }
+window.addEventListener('beforeunload',ev => {
+    if(isAnimating === true)
+    {
+        ev.returnValue = 'Are you sure you want to leave?' ;
+        return ev.returnValue ;
+    }
+});
