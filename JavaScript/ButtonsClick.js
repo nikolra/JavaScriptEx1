@@ -1,5 +1,5 @@
 
-let isAnimating = true
+let isAnimating = false
 const radius = 7
 const smallInt = 0.001
 const initialVelocity = {x:1, y:1}
