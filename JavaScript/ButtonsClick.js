@@ -7,7 +7,7 @@ const topDisk = new Disk(50, radius, radius, 'pink', initialVelocity)
 const buttonDisk = new Disk(50, canvas.height -radius, 10, 'blue', initialVelocity)
 const rightDisk = new Disk(canvas.width - radius, 50, 10, 'black', initialVelocity)
 const leftDisk = new Disk(radius, 100, 10, 'purple', initialVelocity)
-const disks = [buttonDisk, topDisk, rightDisk, leftDisk]
+let disks = [buttonDisk, topDisk, rightDisk, leftDisk]
 
 function initVelocity(){
 
@@ -30,6 +30,7 @@ function drawInitialDisksLocation() {
     rightDisk.y = Math.random() * (canvas.height - 2 * radius) + radius
     leftDisk.x = radius + smallInt
     leftDisk.y = Math.random() * (canvas.height - 2 * radius) + radius
+    disks = [buttonDisk, topDisk, rightDisk, leftDisk]
     disks.forEach(disk => {
         disk.draw()
     })

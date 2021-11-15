@@ -15,15 +15,17 @@ function animate() {
 
 function coalitionBetweenDisks() {
     disks.forEach((disk, index) => {
-        disks.forEach(innerDisk => {//checks coalition between tow disks
+        disks.forEach((innerDisk, innerIndex) => {//checks coalition between tow disks
             //need to check that it is not the same disk!!!!
             const distance = Math.hypot(innerDisk.x - disk.x, innerDisk.y - disk.y)
             if (disk !== innerDisk) {
                 if (distance - innerDisk.radius - disk.radius < 1) { //two disks collide
                     //setTimeout(() => {// removes flash on the screen when a disk is removed
-                        //TODO: decide which disk to remove
                         //TODO: add reaction of the remaining disk
+                        //TODO: update the if statement
+                    if(disk.velocity > innerDisk.velocity)
                         disks.splice(index, 1)// removes a single disk at index in the array
+                    else disks.splice(innerIndex, 1)
                     //})
                 }
             }
