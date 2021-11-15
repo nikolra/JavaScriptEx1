@@ -23,6 +23,14 @@ function animate() {
         cancelAnimationFrame(animate)
         isAnimating = false
     }
+
+    if(disks.length === 1) {
+        curr_time_disply.innerHTML = 'Game ended'
+        let time_left = counter ;
+        counter = 0
+        showSumMsg(time_left);
+    }
+
 }
 
 function showSumMsg(time_left)

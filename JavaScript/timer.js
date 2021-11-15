@@ -26,14 +26,17 @@ function restartClicked(){
 
 function startClicked() {
     console.log("Start event");
+
     if (!isAnimating) {
         if (!timer_id) {
             counter = document.getElementById('TimeInput').value;
             timer_id = window.setInterval(timer_tick, 1000);
         }
-        enabled = true;
-        isAnimating = true;
-        animate();
+        if (counter !== 0) {
+            enabled = true;
+            isAnimating = true;
+            animate();
+        }
     }
 }
 
