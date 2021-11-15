@@ -1,12 +1,12 @@
 
 let isAnimating = true
-const radius = 10
+const radius = 7
 const smallInt = 0.001
 const initialVelocity = {x:1, y:1}
 const topDisk = new Disk(50, radius, radius, 'pink', initialVelocity)
-const buttonDisk = new Disk(50, canvas.height -radius, 10, 'blue', initialVelocity)
-const rightDisk = new Disk(canvas.width - radius, 50, 10, 'green', initialVelocity)
-const leftDisk = new Disk(radius, 100, 10, 'purple', initialVelocity)
+const buttonDisk = new Disk(50, canvas.height - radius, radius, 'blue', initialVelocity)
+const rightDisk = new Disk(canvas.width - radius, 50, radius, 'green', initialVelocity)
+const leftDisk = new Disk(radius, 100, radius, 'purple', initialVelocity)
 let disks = [buttonDisk, topDisk, rightDisk, leftDisk]
 
 function initVelocity(){
@@ -18,7 +18,6 @@ function initVelocity(){
 
 }
 
-//Todo: call when the HTML is loaded need to draw the disks
 function drawInitialDisksLocation() {
     initVelocity()
 

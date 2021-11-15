@@ -6,9 +6,8 @@ button, div ,input
 #main
 {
     width: 40%;
-    margin-left: auto;
-    margin-right: auto;
     text-align: center;
+    margin-right: auto;
 }
 
 #CanvasDiv {
@@ -20,67 +19,68 @@ button, div ,input
 }
 
 #DiskCanvas{
-    height: 1000px;
-    width: 1000px;
+    height: 28vw;
+    width:97vw;
 }
 
 .RectangleArea{
-    height: 1000px;
-    width: 1000px;
+    height: 28vw;
+    width: 97vw;
 }
 
 .inputs {
-    margin-top: 30px;
+    margin-top: 30vw;
 }
 input {
     padding: 0;
     border: none;
     outline: none;
     box-sizing: border-box;
-    font-family:"Copperplate Gothic Light";
-
+    font-family: "Copperplate Gothic Light", serif;
 }
 
 input {
     background: #ecf0f3;
-    padding: 10px;
-    padding-left: 20px;
-    height: 50px;
-    font-size: 14px;
-    border-radius: 50px;
+    padding: 1vw;
+    padding-left: 2vw;
+    height: 5vw;
+    font-size: 1.4vw;
+    border-radius: 5vw;
     box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
 }
 
 .timer {
     font-family: sans-serif;
     display: inline-block;
-    padding: 24px 32px;
-    border-radius: 30px;
+    padding: 1.4vw 2.2vw;
+    border-radius: 3vw;
     background: white;
 }
 
 .Button {
     background-color: #fbeee0;
-    border: 2px solid #CBCED1FF;
-    border-radius: 30px;
-    font-family:"Copperplate Gothic Light";
+    border: 0.2vw solid #CBCED1FF;
+    border-radius: 3vw;
+    font-family: "Copperplate Gothic Light", serif;
     box-shadow: #CBCED1FF 4px 4px 0 0;
     color: #422800;
     cursor: pointer;
     display: inline-block;
     font-weight: 600;
-    font-size: 18px;
-    padding: 0 18px;
-    line-height: 50px;
+    font-size: 1.8vw;
+    padding: 0 0.8vw;
+    line-height: 5vw;
     text-align: center;
     text-decoration: none;
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-    margin-right: 5px;
+    margin-right: 0.5vw;
 }
 #CurrentTime{
-    font-family:"Copperplate Gothic Light";
+    font-family: "Copperplate Gothic Light";
+    font-size: 1.5vw;
+
 }
 .Button:hover {
     background-color: #fff;
@@ -93,13 +93,19 @@ input {
 
 
 .TimeInputDiv{
-    font-family:"Copperplate Gothic Light";
-    margin-bottom: 10px;
+    font-family: "Copperplate Gothic Light";
+    margin-bottom: 1vw;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 76.8vm) {
     .Button {
-        min-width: 120px;
-        padding: 0 25px;
+        min-width: 12vw;
+        padding: 0 1.5vw;
     }
+}
+
+#TimeLabel{
+    font-family: "Copperplate Gothic Light";
+    font-size: 1.8vw;
+
 }
