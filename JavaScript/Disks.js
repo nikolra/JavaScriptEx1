@@ -7,7 +7,7 @@ function animate() {
             let time_left = counter ;
             curr_time_display.innerHTML = 'GAME OVER' + ', Time left to run the game :' + time_left + 'seconds' ;
             counter = 0
-            showSumMsg(time_left);
+            PauseClicked()
         }
         requestAnimationFrame(animate)
         context.clearRect(0, 0, canvas.width, canvas.height) // clears the previous screen. only the last drawn disk is shown
@@ -17,20 +17,11 @@ function animate() {
         })
         coalitionBetweenDisks()
         coalitionWithWall()
-
     }
     else{
         cancelAnimationFrame(animate)
         isAnimating = false
     }
-
-    if(disks.length === 1) {
-        curr_time_display.innerHTML = 'Game ended'
-        let time_left = counter ;
-        counter = 0
-        showSumMsg(time_left);
-    }
-
 }
 
 function coalitionBetweenDisks() {
@@ -40,7 +31,7 @@ function coalitionBetweenDisks() {
             const distance = Math.hypot(innerDisk.x - disk.x, innerDisk.y - disk.y)
             if (disk !== innerDisk) {
                 if (distance - innerDisk.radius - disk.radius < 1) { //two disks collide
-                    //TODO: add reaction of the remaining disk
+                    //TODO: update the if statement
                     if (calcAverage(disk.velocity.x, disk.velocity.y) > calcAverage(innerDisk.velocity.x, innerDisk.velocity.y)){
                         disks.splice(index, 1)// removes a single disk at index in the array
                         innerDisk.velocity.x = 0 - innerDisk.velocity.x
