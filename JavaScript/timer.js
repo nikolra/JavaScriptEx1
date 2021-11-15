@@ -17,9 +17,10 @@ function restartClicked(){
     console.log("restart event");
     counter = 0;
     timer_id = null ;
-    curr_time_disply.innerHTML = counter;
+    curr_time_disply.innerHTML = "Not initialize";
+    isAnimating = false;
+    context.clearRect(0, 0, canvas.width, canvas.height)
     drawInitialDisksLocation()
-    startClicked();
 }
 
 
