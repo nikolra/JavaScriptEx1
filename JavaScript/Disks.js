@@ -2,8 +2,13 @@
 function animate() {
 
     if(isAnimating) {
-        if(disks.length === 1)
+        if(disks.length === 1) {
             isAnimating = false
+            curr_time_disply.innerHTML = 'Game ended'
+            let time_left = counter ;
+            counter = 0
+            showSumMsg(time_left);
+        }
         requestAnimationFrame(animate)
         context.clearRect(0, 0, canvas.width, canvas.height) // clears the previous screen. only the last drawn disk is shown
         disks.forEach((disk) => {
@@ -18,7 +23,12 @@ function animate() {
         cancelAnimationFrame(animate)
         isAnimating = false
     }
+}
 
+function showSumMsg(time_left)
+{
+    window.addEventListener("message",(event)=>'the time has left to the end of the game is',time_left)
+    console.log('summery' ,time_left)
 }
 
 function coalitionBetweenDisks() {
