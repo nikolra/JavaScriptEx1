@@ -3,11 +3,11 @@ button, div ,input
     margin-top: 1rem;
 }
 
-#main
+#Main
 {
     width: 40%;
     text-align: center;
-    margin-right: auto;
+    margin: auto;
 }
 
 #CanvasDiv {
