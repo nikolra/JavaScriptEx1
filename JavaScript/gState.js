@@ -2,6 +2,7 @@ const g_state = {
     canvas: document.getElementById("DiskCanvas"),
     context: document.getElementById("DiskCanvas").getContext("2d"),
     curr_time_display: document.querySelector("#CurrentTime"),
+    canvas_div: document.getElementById("CanvasDiv"),
 
     is_animating: false,
     radius: 7,

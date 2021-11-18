@@ -4,7 +4,7 @@ function animate() {
         if(g_state.disks.length === 1) {
             g_state.is_animating = false
             g_state.curr_time_display.innerHTML = 'GAME OVER' + ', Time left to run the game :'
-                + g_state.time_left + ' seconds' ;
+                + g_state.time_left + ' seconds.' + ' The winning disk is: ' + g_state.disks[0].color;
             g_state.counter = 0
             pause_clicked()
         }
@@ -19,16 +19,18 @@ function animate() {
 
 function coalition_between_disks() {
     g_state.disks.forEach((disk, index) => {
-        g_state.disks.forEach((inner_Disk, inner_index) => {
-            const distance = Math.hypot(inner_Disk.x - disk.x, inner_Disk.y - disk.y)
-            if (disk !== inner_Disk) {
-                if (distance - inner_Disk.radius - disk.radius < 1) {
-                    if (absolute(disk.velocity.x - disk.velocity.y) > absolute(inner_Disk.velocity.x - inner_Disk.velocity.y)) {
+        g_state.disks.forEach((inner_disk, inner_index) => {
+            const distance = Math.hypot(inner_disk.x - disk.x, inner_disk.y - disk.y)
+            if (disk !== inner_disk) {
+                if (distance - inner_disk.radius - disk.radius < 1) {
+                    if (absolute(disk.velocity.x - disk.velocity.y) > absolute(inner_disk.velocity.x - inner_disk.velocity.y)) {
+                        g_state.canvas_div.style.borderColor = disk.color
                         g_state.disks.splice(index, 1)
-                        inner_Disk.velocity.x = 0 - inner_Disk.velocity.x
-                        inner_Disk.velocity.y = 0 - inner_Disk.velocity.y
+                        inner_disk.velocity.x = 0 - inner_disk.velocity.x
+                        inner_disk.velocity.y = 0 - inner_disk.velocity.y
                     }
                     else {
+                        g_state.canvas_div.style.borderColor = inner_disk.color
                         g_state.disks.splice(inner_index, 1)
                         disk.velocity.x = 0 - disk.velocity.x
                         disk.velocity.y = 0 - disk.velocity.y
