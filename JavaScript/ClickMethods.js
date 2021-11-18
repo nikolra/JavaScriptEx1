@@ -15,7 +15,7 @@ let counter = null ;
 let time_left = 0;
 function restartClicked(){
     clearInterval(timer_id)
-    console.log("restart event");
+    console.log("Restart event");
     counter = 0;
     timer_id = null;
     time_left = 0;

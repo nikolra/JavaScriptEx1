@@ -1,10 +1,10 @@
+let isAnimating = false
 
 function animate() {
-
     if(isAnimating) {
         if(disks.length === 1) {
             isAnimating = false
-            curr_time_display.innerHTML = 'GAME OVER' + ', Time left to run the game :' + time_left + 'seconds' ;
+            curr_time_display.innerHTML = 'GAME OVER' + ', Time left to run the game :' + time_left + ' seconds' ;
             counter = 0
             PauseClicked()
         }

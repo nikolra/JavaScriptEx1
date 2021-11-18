@@ -19,8 +19,6 @@ class Disk{
 
     update(){
         this.draw()
-        //makes sure that the disk is always in the canvas frame
-        //the small int moves the disk a little bit from the borders
         this.x = this.x + this.velocity.x > canvas.width - radius ? canvas.width - radius + smallInt : this.x + this.velocity.x
         this.y = this.y + this.velocity.y > canvas.height - radius ? canvas.height - radius + smallInt : this.y + this.velocity.y
 

@@ -1,5 +1,4 @@
 
-let isAnimating = false
 const radius = 7
 const smallInt = 0.001
 const initialVelocity = {x:1, y:1}
@@ -20,7 +19,6 @@ function initVelocity(){
 
 function drawInitialDisksLocation() {
     initVelocity()
-
     topDisk.y = radius + smallInt
     topDisk.x = Math.random() * (canvas.width - 2 * radius) + radius
     buttonDisk.y = canvas.height - radius + smallInt
