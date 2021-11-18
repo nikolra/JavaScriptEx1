@@ -17,7 +17,7 @@ function initVelocity(){
 
 }
 
-function drawInitialDisksLocation() {
+function draw_initial_disks_location() {
     initVelocity()
     topDisk.y = radius + smallInt
     topDisk.x = Math.random() * (canvas.width - 2 * radius) + radius
@@ -33,5 +33,5 @@ function drawInitialDisksLocation() {
     })
 }
 
-drawInitialDisksLocation()
+draw_initial_disks_location()
 
