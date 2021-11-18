@@ -28,7 +28,11 @@ function coalition_between_disks() {
                         inner_Disk.velocity.x = 0 - inner_Disk.velocity.x
                         inner_Disk.velocity.y = 0 - inner_Disk.velocity.y
                     }
-                    else disks.splice(inner_index, 1)
+                    else {
+                        disks.splice(inner_index, 1)
+                        disk.velocity.x = 0 - disk.velocity.x
+                        disk.velocity.y = 0 - disk.velocity.y
+                    }
                 }
             }
         })
