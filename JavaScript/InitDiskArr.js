@@ -1,37 +1,43 @@
 
 const radius = 7
-const smallInt = 0.001
-const initialVelocity = {x:1, y:1}
-const topDisk = new Disk(50, radius, radius, 'pink', initialVelocity)
-const buttonDisk = new Disk(50, canvas.height - radius, radius, 'blue', initialVelocity)
-const rightDisk = new Disk(canvas.width - radius, 50, radius, 'green', initialVelocity)
-const leftDisk = new Disk(radius, 100, radius, 'purple', initialVelocity)
-let disks = [buttonDisk, topDisk, rightDisk, leftDisk]
+const small_int = 0.001
+const initial_velocity = {x:1, y:1}
+const top_disk = new Disk(50, radius, radius, 'pink', initial_velocity)
+const button_disk = new Disk(50, canvas.height - radius, radius, 'blue', initial_velocity)
+const right_disk = new Disk(canvas.width - radius, 50, radius, 'green', initial_velocity)
+const left_disk = new Disk(radius, 100, radius, 'purple', initial_velocity)
+const disks = [button_disk, top_disk, right_disk, left_disk]
 
-function initVelocity(){
+function init_array() {
+    for( let i = 0; i < disks.length ; i++)
+        disks.pop()
+    disks.push(button_disk, top_disk, right_disk, left_disk)
+}
 
-    topDisk.velocity = {x:Math.random() * 2, y:Math.random() * 2}
-    buttonDisk.velocity = {x:Math.random() * 2, y:Math.random() * 2}
-    rightDisk.velocity = {x:Math.random() * 2, y:Math.random() * 2}
-    leftDisk.velocity = {x:Math.random() * 2, y:Math.random() * 2}
+function init_velocity(){
+
+    top_disk.velocity = {x:Math.random() * 2, y:Math.random() * 2}
+    button_disk.velocity = {x:Math.random() * 2, y:Math.random() * 2}
+    right_disk.velocity = {x:Math.random() * 2, y:Math.random() * 2}
+    left_disk.velocity = {x:Math.random() * 2, y:Math.random() * 2}
 
 }
 
-function drawInitialDisksLocation() {
-    initVelocity()
-    topDisk.y = radius + smallInt
-    topDisk.x = Math.random() * (canvas.width - 2 * radius) + radius
-    buttonDisk.y = canvas.height - radius + smallInt
-    buttonDisk.x = Math.random() * (canvas.width - 2 * radius) + radius
-    rightDisk.x = canvas.width - radius + smallInt
-    rightDisk.y = Math.random() * (canvas.height - 2 * radius) + radius
-    leftDisk.x = radius + smallInt
-    leftDisk.y = Math.random() * (canvas.height - 2 * radius) + radius
-    disks = [buttonDisk, topDisk, rightDisk, leftDisk]
-    disks.forEach(disk => {
-        disk.draw()
-    })
+function draw_initial_disks_location() {
+    init_velocity()
+    top_disk.y = radius + small_int
+    top_disk.x = Math.random() * (canvas.width - 2 * radius) + radius
+    button_disk.y = canvas.height - radius + small_int
+    button_disk.x = Math.random() * (canvas.width - 2 * radius) + radius
+    right_disk.x = canvas.width - radius + small_int
+    right_disk.y = Math.random() * (canvas.height - 2 * radius) + radius
+    left_disk.x = radius + small_int
+    left_disk.y = Math.random() * (canvas.height - 2 * radius) + radius
+    init_array()
+    draw_disks_array()
 }
 
-drawInitialDisksLocation()
+
+
+draw_initial_disks_location()
 

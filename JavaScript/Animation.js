@@ -1,23 +1,19 @@
-let isAnimating = false
+let is_animating = false
 
 function animate() {
-    if(isAnimating) {
+    if(is_animating) {
         if(disks.length === 1) {
-            isAnimating = false
+            is_animating = false
             curr_time_display.innerHTML = 'GAME OVER' + ', Time left to run the game :' + time_left + ' seconds' ;
             counter = 0
             PauseClicked()
         }
-        context.clearRect(0, 0, canvas.width, canvas.height) // clears the previous screen. only the last drawn disk is shown
-        disks.forEach((disk) => {
-            disk.draw()
-            disk.update()
-        })
+        draw_disks_array()
         coalitionBetweenDisks()
         coalitionWithWall()
     }
     else{
-       isAnimating = false
+       is_animating = false
     }
 }
 
@@ -50,5 +46,13 @@ function coalitionWithWall() {
             disk.velocity.y = -disk.velocity.y
         if(disk.x <= radius || disk.x >= canvas.width - radius)
             disk.velocity.x =  -disk.velocity.x
+    })
+}
+
+function draw_disks_array() {
+    context.clearRect(0, 0, canvas.width, canvas.height) // clears the previous screen. only the last drawn disk is shown
+    disks.forEach((disk) => {
+        disk.draw()
+        disk.update()
     })
 }

@@ -21,15 +21,15 @@ function restartClicked(){
     time_left = 0;
     enabled = false;
     curr_time_display.innerHTML = "Not initialize";
-    isAnimating = false;
+    is_animating = false;
     context.clearRect(0, 0, canvas.width, canvas.height)
-    drawInitialDisksLocation();
+    draw_initial_disks_location();
 }
 
 function startClicked() {
     console.log("Start event");
 
-    if (!isAnimating) {
+    if (!is_animating) {
         if (!timer_id) {
             counter = document.getElementById('TimeInput').value * 100;
             time_left = document.getElementById('TimeInput').value;
@@ -38,19 +38,19 @@ function startClicked() {
         }
         if (counter !== 0) {
             enabled = true;
-            isAnimating = true;
+            is_animating = true;
             animate();
         }
     }
     if(counter === 0 || disks.length === 1) {
         clearInterval(timer_id)
-        isAnimating = false
+        is_animating = false
     }
 }
 
 function PauseClicked() {
     console.log("Pause event");
-    isAnimating = false;
+    is_animating = false;
     enabled = false;
     /*context.clearRect(0, 0, canvas.width, canvas.height) // clears the previous screen. only the last drawn disk is shown
     disks.forEach((disk) => {
@@ -83,7 +83,7 @@ function interval() {
 }
 
 window.addEventListener('beforeunload',ev => {
-    if(isAnimating === true)
+    if(is_animating === true)
     {
         return ev.returnValue = 'Are you sure you want to leave?' ;
     }
