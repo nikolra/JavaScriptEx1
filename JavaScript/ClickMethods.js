@@ -15,17 +15,17 @@ let counter = null ;
 let time_left = 0;
 
 window.addEventListener('beforeunload',ev => {
-    if(isAnimating === true)
+    if(is_animating === true)
         return ev.returnValue = 'Are you sure you want to leave?' ;
 });
 
 function reset_mode(){
     clearInterval(timer_id)
-    isAnimating = false;
+    is_animating = false;
 }
 
 function pause_clicked() {
-    isAnimating = false;
+    is_animating = false;
     enabled = false;
 }
 
@@ -45,7 +45,7 @@ function restart_clicked(){
 }
 
 function start_clicked() {
-    if (!isAnimating) {
+    if (!is_animating) {
         if (!timer_id) {
             counter = document.getElementById('TimeInput').value * 100;
             time_left = document.getElementById('TimeInput').value;
@@ -54,7 +54,7 @@ function start_clicked() {
         }
         if (counter !== 0) {
             enabled = true;
-            isAnimating = true;
+            is_animating = true;
             animate();
         }
     }
@@ -73,7 +73,7 @@ function timer_tick() {
     }
     else {
         counter--;
-        console.log(counter);
+        //console.log(counter);
         if(counter % 100 === 0) {
             time_left --;
             curr_time_display.innerHTML = time_left;

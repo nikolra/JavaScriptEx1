@@ -6,29 +6,29 @@ function animate() {
             is_animating = false
             curr_time_display.innerHTML = 'GAME OVER' + ', Time left to run the game :' + time_left + ' seconds' ;
             counter = 0
-            PauseClicked()
+            pause_clicked()
         }
         draw_disks_array()
-        coalitionBetweenDisks()
-        coalitionWithWall()
+        coalition_between_disks()
+        coalition_with_wall()
     }
     else{
        is_animating = false
     }
 }
 
-function coalitionBetweenDisks() {
+function coalition_between_disks() {
     disks.forEach((disk, index) => {
-        disks.forEach((innerDisk, innerIndex) => {//checks coalition between tow disks
-            const distance = Math.hypot(innerDisk.x - disk.x, innerDisk.y - disk.y)
-            if (disk !== innerDisk) {
-                if (distance - innerDisk.radius - disk.radius < 1) { //two disks collide
-                    if (absolute(disk.velocity.x - disk.velocity.y) > absolute(innerDisk.velocity.x - innerDisk.velocity.y)) {
-                        disks.splice(index, 1)// removes a single disk at index in the array
-                        innerDisk.velocity.x = 0 - innerDisk.velocity.x
-                        innerDisk.velocity.y = 0 - innerDisk.velocity.y
+        disks.forEach((inner_Disk, inner_index) => {
+            const distance = Math.hypot(inner_Disk.x - disk.x, inner_Disk.y - disk.y)
+            if (disk !== inner_Disk) {
+                if (distance - inner_Disk.radius - disk.radius < 1) {
+                    if (absolute(disk.velocity.x - disk.velocity.y) > absolute(inner_Disk.velocity.x - inner_Disk.velocity.y)) {
+                        disks.splice(index, 1)
+                        inner_Disk.velocity.x = 0 - inner_Disk.velocity.x
+                        inner_Disk.velocity.y = 0 - inner_Disk.velocity.y
                     }
-                    else disks.splice(innerIndex, 1)
+                    else disks.splice(inner_index, 1)
                 }
             }
         })
@@ -40,11 +40,11 @@ function absolute(x) {
     return x < 0 ? -x : x
 }
 
-function coalitionWithWall() {
+function coalition_with_wall() {
     disks.forEach( (disk) => {
-        if(disk.y <= radius || disk.y >= canvas.height - radius)
+        if(disk.y <= radius || disk.y >= canvas.height - radius + small_int)
             disk.velocity.y = -disk.velocity.y
-        if(disk.x <= radius || disk.x >= canvas.width - radius)
+        if(disk.x <= radius || disk.x >= canvas.width - radius + small_int)
             disk.velocity.x =  -disk.velocity.x
     })
 }

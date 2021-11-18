@@ -1,10 +1,11 @@
 const canvas = document.getElementById("DiskCanvas");
 const context = canvas.getContext("2d");
 
-class Disk{
+class Disk {
+
     constructor(x, y, radius, color, velocity) {
-        this.x=x
-        this.y=y
+        this.x = x
+        this.y = y
         this.radius = radius
         this.color = color
         this.velocity = velocity
@@ -21,7 +22,6 @@ class Disk{
         this.draw()
         this.x = this.x + this.velocity.x > canvas.width - radius ? canvas.width - radius + small_int : this.x + this.velocity.x
         this.y = this.y + this.velocity.y > canvas.height - radius ? canvas.height - radius + small_int : this.y + this.velocity.y
-
     }
 
 }

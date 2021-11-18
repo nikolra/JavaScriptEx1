@@ -6,13 +6,7 @@ const top_disk = new Disk(50, radius, radius, 'pink', initial_velocity)
 const button_disk = new Disk(50, canvas.height - radius, radius, 'blue', initial_velocity)
 const right_disk = new Disk(canvas.width - radius, 50, radius, 'green', initial_velocity)
 const left_disk = new Disk(radius, 100, radius, 'purple', initial_velocity)
-const disks = [button_disk, top_disk, right_disk, left_disk]
-
-function init_array() {
-    for( let i = 0; i < disks.length ; i++)
-        disks.pop()
-    disks.push(button_disk, top_disk, right_disk, left_disk)
-}
+let disks = [button_disk, top_disk, right_disk, left_disk]
 
 function init_velocity(){
 
@@ -23,8 +17,7 @@ function init_velocity(){
 
 }
 
-function draw_initial_disks_location() {
-    init_velocity()
+function init_location() {
     top_disk.y = radius + small_int
     top_disk.x = Math.random() * (canvas.width - 2 * radius) + radius
     button_disk.y = canvas.height - radius + small_int
@@ -33,11 +26,14 @@ function draw_initial_disks_location() {
     right_disk.y = Math.random() * (canvas.height - 2 * radius) + radius
     left_disk.x = radius + small_int
     left_disk.y = Math.random() * (canvas.height - 2 * radius) + radius
-    init_array()
-    draw_disks_array()
 }
 
-
+function draw_initial_disks_location() {
+    init_velocity()
+    init_location()
+    disks = [button_disk, top_disk, right_disk, left_disk]
+    draw_disks_array()
+}
 
 draw_initial_disks_location()
 
