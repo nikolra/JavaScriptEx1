@@ -33,6 +33,7 @@ function startClicked() {
         if (!timer_id) {
             counter = document.getElementById('TimeInput').value * 100;
             time_left = document.getElementById('TimeInput').value;
+            curr_time_display.innerHTML = time_left;
             timer_id = window.setInterval(interval, 10);
         }
         if (counter !== 0) {
