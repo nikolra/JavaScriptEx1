@@ -12,15 +12,18 @@ let curr_time_display = document.querySelector("#CurrentTime");
 let timer_id = null ;
 let enabled = true ;
 let counter = null ;
-
+let time_left = 0;
 function restartClicked(){
+    clearInterval(timer_id)
     console.log("restart event");
     counter = 0;
-    timer_id = null ;
+    timer_id = null;
+    time_left = 0;
+    enabled = false;
     curr_time_display.innerHTML = "Not initialize";
     isAnimating = false;
     context.clearRect(0, 0, canvas.width, canvas.height)
-    drawInitialDisksLocation()
+    drawInitialDisksLocation();
 }
 
 function startClicked() {
@@ -28,8 +31,9 @@ function startClicked() {
 
     if (!isAnimating) {
         if (!timer_id) {
-            counter = document.getElementById('TimeInput').value;
-            timer_id = window.setInterval(timer_tick, 1000);
+            counter = document.getElementById('TimeInput').value * 100;
+            time_left = document.getElementById('TimeInput').value;
+            timer_id = window.setInterval(interval, 10);
         }
         if (counter !== 0) {
             enabled = true;
@@ -37,17 +41,21 @@ function startClicked() {
             animate();
         }
     }
+    if(counter === 0 || disks.length === 1) {
+        clearInterval(timer_id)
+        isAnimating = false
+    }
 }
 
 function PauseClicked() {
     console.log("Pause event");
     isAnimating = false;
-    enabled = false ;
-    context.clearRect(0, 0, canvas.width, canvas.height) // clears the previous screen. only the last drawn disk is shown
+    enabled = false;
+    /*context.clearRect(0, 0, canvas.width, canvas.height) // clears the previous screen. only the last drawn disk is shown
     disks.forEach((disk) => {
         disk.draw()
         disk.update()
-    })
+    })*/
 }
 
 function timer_tick() {
@@ -55,14 +63,24 @@ function timer_tick() {
     if(counter === 0)
     {
         PauseClicked();
-        curr_time_disply.innerHTML = 'Sorry, time is up!'
+        curr_time_display.innerHTML = 'Sorry, time is up!'
+        clearInterval()
     }
     else {
         counter--;
         console.log(counter);
-        curr_time_display.innerHTML = counter;
+        if(counter % 100 === 0) {
+            time_left --;
+            curr_time_display.innerHTML = time_left;
+        }
     }
 }
+
+function interval() {
+    timer_tick();
+    animate();
+}
+
 window.addEventListener('beforeunload',ev => {
     if(isAnimating === true)
     {
